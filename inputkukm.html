@@ -306,9 +306,9 @@ ul.ui-autocomplete li.ui-state-hover:hover{
 						  <label class="col-sm-3  control-label">Bantuan Pemerintah</label>	
 								<div class="col-sm-3">
 									<div class="input-group">
-											<input type="text" class="form-control" disabled="TRUE">
+											<input type="text" id="showPe" class="form-control" disabled="TRUE">
 										<span class="input-group-addon">
-											<input type="checkbox">
+											<input type="checkbox" id="showPem">
 										</span>
 									</div>
 								</div>
@@ -322,9 +322,9 @@ ul.ui-autocomplete li.ui-state-hover:hover{
 							 <label class="col-sm-3  control-label">Pinjaman Koperasi</label>
 								<div class="col-sm-3">
 									<div class="input-group">
-											<input type="text" class="form-control" disabled="TRUE">
+											<input type="text" id='showKo' class="form-control" disabled="TRUE">
 										<span class="input-group-addon">
-											<input type="checkbox">
+											<input type="checkbox" id="showKop">
 										</span>
 									</div>
 								</div>
@@ -338,9 +338,9 @@ ul.ui-autocomplete li.ui-state-hover:hover{
 							<label class="col-sm-3  control-label">Pinjaman Perorangan</label>
 								<div class="col-sm-3">
 									<div class="input-group">
-											<input type="text" class="form-control" disabled="TRUE">
+											<input type="text" id='showP' class="form-control" disabled="TRUE">
 										<span class="input-group-addon">
-											<input type="checkbox">
+											<input type="checkbox" id="showPerorang">
 										</span>
 									</div>
 								</div>
@@ -459,6 +459,33 @@ ul.ui-autocomplete li.ui-state-hover:hover{
 					} else {
 						$("#showB").removeAttr('disabled');
 						$("#showB").attr('disabled','disabled');
+					}
+			});
+		$('#showPem').click(function(){
+					if($("#showPem").is(":checked")) {
+						$("#showPe").attr('disabled','disabled');
+						$("#showPe").removeAttr('disabled');
+					} else {
+						$("#showPe").removeAttr('disabled');
+						$("#showPe").attr('disabled','disabled');
+					}
+			});
+		$('#showKop').click(function(){
+					if($("#showKop").is(":checked")) {
+						$("#showKo").attr('disabled','disabled');
+						$("#showKo").removeAttr('disabled');
+					} else {
+						$("#showKo").removeAttr('disabled');
+						$("#showKo").attr('disabled','disabled');
+					}
+			});
+		$('#showPerorang').click(function(){
+					if($("#showPerorang").is(":checked")) {
+						$("#showP").attr('disabled','disabled');
+						$("#showP").removeAttr('disabled');
+					} else {
+						$("#showP").removeAttr('disabled');
+						$("#showP").attr('disabled','disabled');
 					}
 			});
 		$('#txtPhone').blur(function(e) {
